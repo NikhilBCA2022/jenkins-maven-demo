@@ -69,8 +69,8 @@ pipeline {
             slackSend(
                 channel: '#all-jenkins-notifications',
                 color: 'danger',
-		tokenCredentialId: 'slack-token',
-		botUser: true,
+		        tokenCredentialId: 'slack-token',
+				botUser: true,
                 message: "FAILED: ${env.JOB_NAME} - Build #${env.BUILD_NUMBER}\nBuild URL: ${env.BUILD_URL}"
             )
         }
