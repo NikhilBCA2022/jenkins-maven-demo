@@ -50,3 +50,9 @@ jobs:
           java-version: ${{ inputs.java_version || '17' }}
           cache: maven
       - run: mvn -B test
+
+  on-my-runner:
+    runs-on: self-hosted
+    steps:
+      - run: |
+          echo "this is runner machine ${hostname} "
