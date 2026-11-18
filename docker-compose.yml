@@ -1,0 +1,17 @@
+services:
+  app:
+    image: nikhilj1402/javapp:v1
+    ports:
+      - "8082:8080"
+    depends_on:
+      - db
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: demopass
+      POSTGRES_DB: demodb
+    volumes:
+      - db-data:/var/lib/postgresql/data
+volumes:
+  db-data:
